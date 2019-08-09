@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>OptimizedHTML 5</title>
+	<meta name="description" content="Startup HTML template OptimizedHTML 5">
+
+	<meta name="viewport" content="width=device-width">
+
+
+	<meta property="og:image" content="img/@1x/preview.jpg">
+
+	<link rel="stylesheet" href="css/styles.min.css">
+
+</head>
+
+<body>
+
+	<header class="lazy-background"
+		style="background-image:  url('data:image/gif;base64,R0lGODlhCAcXA4AAAP///wAAACH5BAEAAAEALAAAAAAIBxcDAAL+jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8b+jRw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzZw7e/4MOrTo0aRLmz6NOrXq1axbu34NO7bs2bRr276NO7fu3bx7+/4NPLjw4cSLGz+OPLny5cybO38OPbr06dSrW7+OPbv27dy7e/8OPrz48eTLmz+PPr369ezbu38PP778+fTr27+PP7/+/fz++/v/D2CAAg5IYIEGHohgggouyGCDDj4IYYQSTkhhhRZeiGGGGm7IYYcefghiiCKOSGKJJp6IYooqrshiiy6+CGOMMs5IY4023ohjjjruyGOPPv4IZJBCDklkkUYeiWSSSi7JZJNOPglllFJOSWWVVl6JZZZabslll15+CWaYYo5JZplmnolmmmquyWabbr4JZ5xyzklnnXbeiWeeeu7JZ59+/glooIIOSmihhh6KaKKKLspoo44+Cmmkkk5KaaWWXopppppuymmnnn4Kaqiijkpqqaaeimqqqq7KaquuvgprrLLOSmuttt6Ka6667sprr77+Cmywwg5LbLHGHov+bLLKLstss84+C2200k5LbbXWXottttpuy2233n4Lbrjijktuueaei2666q7LbrvuvgtvvPLOS2+99t6Lb7767stvv/7+C3DAAg9McMEGH4xwwgovzHDDDj8MccQST0xxxRZfjHHGGm/McccefwxyyCKPTHLJJp+Mcsoqr8xyyy6/DHPMMs9Mc80234xzzjrvzHPPPv8MdNBCD0100UYfjXTSSi/NdNNOPw111FJPTXXVVl+NddZab811115/DXbYYo9Ndtlmn4122mqvzXbbbr8Nd9xyz0133XbfjXfeeu/Nd99+/w144IIPTnjhhh+OeOKKL854444/Dnnkkk/+Tnnlll+Oeeaab855555/Dnrooo9Oeummn4566qqvznrrrr8Oe+yyz0577bbfjnvuuu/Oe+++/w588MIPT3zxxh+PfPLKL898884/D3300k9PffXWX4999tpvz3333n8Pfvjij09++eafj3766q/Pfvvuvw9//PLPT3/99t+Pf/76789///7/D8AACnCABCygAQ+IwAQqcIEMbKADHwjBCEpwghSsoAUviMEManCDHOygBz8IwhCKcIQkLKEJT4jCFKpwhSxsoQtfCMMYynCGNKyhDW+IwxzqcIc87KEPfwjEIApxiEQsohGPiMQkKnGJTGyiE58IxShKcYpUrKL+Fa+IxSxqcYtc7KIXvwjGMIpxjGQsoxnPiMY0qnGNbGyjG98IxzjKcY50rKMd74jHPOpxj3zsox//CMhACnKQhCykIQ+JyEQqcpGMbKQjHwnJSEpykpSspCUviclManKTnOykJz8JylCKcpSkLKUpT4nKVKpylaxspStfCctYynKWtKylLW+Jy1zqcpe87KUvfwnMYApzmMQspjGPicxkKnOZzGymM58JzWhKc5rUrKY1r4nNbGpzm9zspje/Cc5winOc5CynOc+JznSqc53sbKc73wnPeMpznvSspz3vic986nOf/OynP/8J0IAKdKAELahBD4rQhCp0oQxtqEP+HwrRiEp0ohStqEUvitGManSjHO2oRz8K0pCKdKQkLalJT4rSlKp0pSxtqUtfCtOYynSmNK2pTW+K05zqdKc87alPfwrUoAp1qEQtqlGPitSkKnWpTG2qU58K1ahKdapUrapVr4rVrGp1q1ztqle/CtawinWsZC2rWc+K1rSqda1sbatb3wrXuMp1rnStq13vite86nWvfO2rX/8K2MAKdrCELaxhD4vYxCp2sYxtrGMfC9nISnaylK2sZS+L2cxqdrOc7axnPwva0Ip2tKQtrWlPi9rUqna1rG2ta18L29jKdra0ra1tb4vb3Op2t7ztrW9/C9zgCne4xC2ucY/+i9zkKne5zG2uc58L3ehKd7rUra51r4vd7Gp3u9ztrne/C97wine85C2vec+L3vSqd73sba973wvf+Mp3vvStr33vi9/86ne//O2vf/8L4AALeMAELrCBD4zgBCt4wQxusIMfDOEIS3jCFK6whS+M4QxreMMc7rCHPwziEIt4xCQusYlPjOIUq3jFLG6xi18M4xjLeMY0rrGNb4zjHOt4xzzusY9/DOQgC3nIRC6ykY+M5CQreclMbrKTnwzlKEt5ylSuspWvjOUsa3nLXO6yl78M5jCLecxkLrOZz4zmNKt5zWxus5vfDOc4y3nOdK6zne+M5zzrec987rOf/wwo6EALetCELrShD43oRCt60YxutKMfDelIS3rSlK60pS+N6Uxr+s8FAAA7')"
+		data-bg="img/Slice_1.png">
+		<nav class="navbar navbar-expand-lg navbar-light main-nav nav-container" id='main-nav'>
+			<a class="navbar-brand company-name" href="#"><span class=neutron>neutron</span><span
+					id='name-mail'>Mail</span></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="#">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Security</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Blog</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Careers</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Support</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Donate</a>
+					</li>
+					<li class="nav-item d-flex nav-login">
+						<a href="#" class="nav-link"><img width="20px" src="img/login.svg" alt=""> <span>Log
+								in</span></a>
+						<button class="accent-btn">Sign up</button>
+					</li>
+				</ul>
+
+			</div>
+		</nav>
+		<nav aria-label="breadcrumb " class='nav-container'>
+			<ol class="breadcrumb bg-white pl-0" id="languages">
+				<li class="breadcrumb-item"><a href="#" aria-current="page">English</a></li>
+				<li class="breadcrumb-item "><a href="#">French</a></li>
+				<li class="breadcrumb-item"><a href="#">Italian</a></li>
+				<li class="breadcrumb-item "><a href="#">Polish</a></li>
+			</ol>
+		</nav>
+		<div class="header-block">
+			<h1>Secure Email Commuication</h1>
+			<h2>Based in <span id='based'>somewhere</span></h2>
+			<div class="header-block-actions">
+				<button class="account-create accent-btn">Create account</button>
+				<button class="accent-circle-btn accent-btn apple">
+					<img class="lazy" width="20px"
+						src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
+						data-srcset="img/apple.svg 1x" alt="">
+				</button>
+				<button class="accent-circle-btn accent-btn">
+					<img class="lazy" width="20px"
+						src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
+						data-srcset="img/google-play.svg 1x" alt="">
+				</button>
+			</div>
+			<div id="social-links">
+				<img class="lazy" width="20px"
+					src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
+					data-srcset="img/google-plus.svg 1x" alt="">
+				<img class="lazy" width="20px"
+					src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
+					data-srcset="img/facebook.svg 1x" alt="">
+				<img class="lazy" width="20px"
+					src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
+					data-srcset="img/twitter.svg 1x" alt="">
+
+
+
+			</div>
+
+		</div>
+	</header>
+	<main>
+		<section id="features">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-12 col-lg-8">
+						<div class="feautures-block-1">
+							<div class="row">
+								<div class="col-12 col-sm-6 d-flex justify-content-center">
+									<div class="feature">
+										<div class="d-flex">
+											<img width="67px" height="100%" class="lazy"
+												src="data:image/gif;base64,R0lGODlhBwAGAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAYAAAIFjI+py1oAOw=="
+												data-srcset="img/shield.png 1x, img/shield.png" alt="">
+
+
+											<div>
+												<p class="feauture-title">Swiss Privacy</p>
+												<p class="feature-sub_title">Data Security and Neutrality</p>
+											</div>
+										</div>
+										<p class="feature-text">NeutronMail is incorporated in Somewhere and all our
+											servers are located in Switzerland. This means all user data is
+											protected by strict Swiss privacy laws.</p>
+									</div>
+								</div>
+								<div class="col-12 col-sm-6 d-flex justify-content-center">
+									<div class="feature" id="feature-second">
+										<div class="d-flex">
+
+											<img width="95px" height="74px" class="lazy"
+												src="data:image/gif;base64,R0lGODlhBwAGAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAYAAAIFjI+py1oAOw=="
+												data-srcset="img/lock.png 1x, img/lock.png" alt="">
+											<div>
+												<p class="feauture-title">Double Encryption</p>
+												<p class="feature-sub_title">Automatic Email Security</p>
+											</div>
+										</div>
+										<p class="feature-text">All emails are secured automatically with end-to-end
+											encryption. This means even we cannot decrypt and read your emails. As a
+											result, your encrypted emails cannot
+											be shared with third parties.</p>
+									</div>
+								</div>
+							</div>
+							<div class="d-flex justify-content-end">
+								<div class="physical-security d-flex justify-content-end">
+									<p class="ph-title">Physical Security</p>
+									<p class="ph-text">NeutronMail's infrastructure resides in Europe's most secure
+										datacenter, underneath 1000 meters of solid rock.</p>
+								</div>
+							</div>
+							<button class="learn-security">
+								Learn more about our security features
+							</button>
+						</div>
+					</div>
+					<div class="col-12 col-lg-4 d-flex justify-content-center"" >
+						<div class=" feautures-block-2">
+						<div class="feature" id="feature-third">
+							<div class="d-flex">
+
+								<img width="67px" height="100%" class="lazy"
+									src="data:image/gif;base64,R0lGODlhBwAGAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAYAAAIFjI+py1oAOw=="
+									data-srcset="img/key.png 1x, img/key.png" alt="">
+								<div>
+									<p class="feauture-title">Anonymous Email</p>
+									<p class="feature-sub_title">Protect Your Privacy</p>
+								</div>
+							</div>
+							<p class="feature-text">No personal information is required to create your secure email
+								account. By default, we do not keep any IP logs which can be linked to your anonymous
+								email account. Your privacy comes first.</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			</div>
+		</section>
+		<section id="partners">
+			<div class="d-flex">
+
+				<img class="lazy"
+					src="data:image/gif;base64,R0lGODlhJQAZAIAAAP///wAAACH5BAEAAAEALAAAAAAlABkAAAIdjI+py+0Po5y02ouz3rz7D4biSJbmiabqyrauVgAAOw=="
+					data-srcset="img/Slice_10.png 1x, img/Slice_10.png" alt="">
+				<img class="lazy"
+					src="data:image/gif;base64,R0lGODlhiQBiAIAAAP///wAAACH5BAEAAAEALAAAAACJAGIAAAKKjI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ClQAADs="
+					data-srcset="img/Slice_11.png 1x, img/Slice_11.png" alt="">
+
+				<img class="lazy"
+					src="data:image/gif;base64,R0lGODlhCQAHAIAAAP///wAAACH5BAEAAAEALAAAAAAJAAcAAAIHjI+py+1cAAA7"
+					data-srcset="img/Slice_12.png 1x, img/Slice_12.png" alt="">
+
+				<img class="lazy"
+					src="data:image/gif;base64,R0lGODlhoABhAIAAAP///wAAACH5BAEAAAEALAAAAACgAGEAAAKWjI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7y1cAADs="
+					data-srcset="img/Slice_13.png 1x, img/Slice_13.png" alt="">
+				<img class="lazy"
+					src="data:image/gif;base64,R0lGODlhOgAjAIAAAP///wAAACH5BAEAAAEALAAAAAA6ACMAAAItjI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh5ICADs="
+					data-srcset="img/Slice_14.png 1x, img/Slice_14.png" alt="">
+
+			</div>
+		</section>
+		<section id="quotes">
+			<div class="container">
+				<div class="d-flex">
+					<div class="quotes-pages d-flex">
+						<div class="quote-page-circle active"></div>
+						<div class="quote-page-circle"></div>
+						<div class="quote-page-circle"></div>
+					</div>
+					<blockquote class="blockquote">
+						<p> A new email service being developed by a group from MIT and CERN promises to bring secure,
+							encrypted email to the masses and keep sensitive information away from prying eyes.</p>
+						<cite> — Boston Herald </cite>
+					</blockquote>
+				</div>
+			</div>
+		</section>
+
+		<section id="rest">
+
+			<section id="everywhere" class="d-flex justify-content-center">
+				<div id="test">
+
+				</div>
+				<div class="content">
+					<div class="learn-platforms">
+						<h2>Any device, anywhere</h2>
+						<p>
+							The NeutronMail inbox is optimized for productivity. Each detail within our secure email
+							service is optimized to help you better read, organize, and send email.
+						</p>
+						<div>
+
+							<img class="lazy"
+								src="data:image/gif;base64,R0lGODlhJAALAIAAAP///wAAACH5BAEAAAEALAAAAAAkAAsAAAIRjI+py+0Po5y02ouz3rz7bxUAOw=="
+								data-srcset="img/appstore.png 1x, img/appstore.png" alt="">
+							<img class="lazy"
+								src="data:image/gif;base64,R0lGODlhJAALAIAAAP///wAAACH5BAEAAAEALAAAAAAkAAsAAAIRjI+py+0Po5y02ouz3rz7bxUAOw=="
+								data-srcset="img/google_play.png 1x, img/google_play.png" alt="">
+
+						</div>
+					</div>
+
+				</div>
+			</section>
+			<section id="privacy">
+				<div>
+					<h2 class="text-center">Privacy is a fundamental human right.</h2>
+					<h3>Your support helps us to protect privacy world-wide.</h3>
+					<div class="d-flex justify-content-around actions">
+						<button class="accent-btn paid">Upgrade to Paid Plan</button>
+						<button class="accent-btn donate">$ Donate</button>
+					</div>
+				</div>
+			</section>
+			<footer>
+				<section id="hypryd">
+					<section id="sponsors">
+						<p class="text-right">Those, who help us secure your privacy</p>
+						<div class="sponsors-list d-flex justify-content-end">
+							<img class="lazy"
+								src="data:image/gif;base64,R0lGODlhAQBaAIAAAP///wAAACH5BAEAAAEALAAAAAABAFoAAAIIjI+py+0PYQEAOw=="
+								data-srcset="img/Slice_18.png 1x, img/Slice_18.png" alt="">
+
+							<img class="lazy"
+								src="data:image/gif;base64,R0lGODlhAQBaAIAAAP///wAAACH5BAEAAAEALAAAAAABAFoAAAIIjI+py+0PYQEAOw=="
+								data-srcset="img/Slice_22.png 1x, img/Slice_22.png" alt="">
+
+							<img class="lazy"
+								src="data:image/gif;base64,R0lGODlhAQBaAIAAAP///wAAACH5BAEAAAEALAAAAAABAFoAAAIIjI+py+0PYQEAOw=="
+								data-srcset="img/Slice_23.png 1x, img/Slice_23.png" alt="">
+							<img class="lazy"
+								src="data:image/gif;base64,R0lGODlhAQBaAIAAAP///wAAACH5BAEAAAEALAAAAAABAFoAAAIIjI+py+0PYQEAOw=="
+								data-srcset="img/Slice_24.png 1x, img/Slice_24.png" alt="">
+							<img class="lazy"
+								src="data:image/gif;base64,R0lGODlhAQBaAIAAAP///wAAACH5BAEAAAEALAAAAAABAFoAAAIIjI+py+0PYQEAOw=="
+								data-srcset="img/Slice_25.png 1x, img/Slice_25.png" alt="">
+							<img class="lazy"
+								src="data:image/gif;base64,R0lGODlhAQBaAIAAAP///wAAACH5BAEAAAEALAAAAAABAFoAAAIIjI+py+0PYQEAOw=="
+								data-srcset="img/Slice_26.png 1x, img/Slice_26.png" alt="">
+							<img class="lazy"
+								src="data:image/gif;base64,R0lGODlhAQBaAIAAAP///wAAACH5BAEAAAEALAAAAAABAFoAAAIIjI+py+0PYQEAOw=="
+								data-srcset="img/Slice_27.png 1x, img/Slice_27.png" alt="">
+						</div>
+					</section>
+					<section id="footer-nav">
+						<div class="footer-navigation d-flex justify-content-between">
+							<div class="emails">
+								<ul>
+									<li>
+										General:<a href="mailto://zanin.vowa2015@yandex.ru">contact@neu</a>
+									</li>
+									<li>
+										Media: <a href="mailto://zanin.vowa2015@yandex.ru">media@neutronmail.ch</a>
+									</li>
+									<li>
+										Security: <a
+											href="mailto://zanin.vowa2015@yandex.ru">security@neutronmail.ch</a>
+									</li>
+									<li id="footer-nav-2-block">
+										For support inquiries, please visit
+									</li>
+									<li>
+										<a href="mailto://zanin.vowa2015@yandex.ru">neutronmail.com/support</a>
+									</li>
+								</ul>
+							</div>
+							<div class="links d-flex">
+								<div class="column" id="first-column">
+									<p>Company</p>
+									<ul>
+										<li><a href="google.com">Blog</a></li>
+										<li><a href="google.com">Team</a></li>
+										<li><a href="google.com">Careers</a></li>
+										<li><a href="google.com">Support</a></li>
+										<li><a href="google.com">Donate</a></li>
+									</ul>
+								</div>
+								<div class="column">
+									<p>Legal</p>
+									<ul>
+										<li><a href="google.com">Imprint</a></li>
+										<li><a href="google.com">Privacy Policy</a></li>
+										<li><a href="google.com">Tearms</a></li>
+										<li><a href="google.com">Report</a></li>
+										<li><a href="google.com">Report Abuse</a></li>
+									</ul>
+								</div>
+								<div class="column">
+									<p>NeutronMail</p>
+									<ul>
+										<li><a href="google.com">Pricing</a></li>
+										<li><a href="google.com">Security</a></li>
+										<li><a href="google.com">Shop</a></li>
+										<li><a href="google.com">Press/Media kit</a></li>
+										<li><a href="google.com">Onion Site</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</section>
+
+				</section>
+				<section id="footer-bottom">
+
+					<ol class="breadcrumb ">
+						<li class="breadcrumb-item"><a href="#">Facebook</a></li>
+						<li class="breadcrumb-item "><a href="#">Google+</a></li>
+						<li class="breadcrumb-item"><a href="#">Twitter</a></li>
+						<li class="breadcrumb-item"><a href="#">Feedback Forum</a></li>
+						<li class="breadcrumb-item"><a href="#">Reddit</a></li>
+					</ol>
+					<p class="copyright">© 2017 Neutron Technologies AG. All Rights Reserved.</p>
+
+				</section>
+			</footer>
+
+		</section>
+	</main>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+	</script>
+	<script src="js/scripts.min.js"></script>
+
+</body>
+
+</html>

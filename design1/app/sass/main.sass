@@ -1,0 +1,606 @@
+@import vars
+@import fonts
+@import libs
+
+body,html 
+	overflow-x: hidden
+
+.accent-btn
+	border-radius: 10em
+	color: #fff
+	font-family: "Titillium" !important
+	font-weight: 700
+	border: none
+	outline: none !important
+	padding-top: 20px
+	padding-bottom: 20px
+	padding-left: 64px
+	padding-right: 64px
+
+// HEADER 
+
+header 
+	padding-top: 45px
+	height: 800px
+	background-position: bottom
+	background-repeat: no-repeat
+	background-size: cover
+	display: flex
+	flex-direction: column
+  	
+
+	.nav-container 
+		padding:  0 200px !important
+
+		@media (max-width: 1258px)
+			padding: 0 40px !important
+		
+		@media (max-width: 400px)
+			padding: 0 10px !important
+
+
+	#main-nav
+		
+
+		.company-name
+			font-weight: 700
+			font-family: "Titillium" !important
+			font-size: 30px
+			color: #858688 !important
+
+			#name-mail 
+				color: #5b4295
+				letter-spacing: 0.06px
+		
+		.nav-link
+			color: #454545
+			font-family: "Titillium"
+			font-size: 16px
+			font-weight: 400
+
+		.nav-login
+			
+			margin-left:70px !important
+
+			@media (max-width: 992px)
+				margin-left: 0 !important
+
+			span
+				font-weight: 700 !important
+				letter-spacing: 0.16px
+
+			.accent-btn 
+
+				padding: 10px 20px
+				box-shadow: 0 3px 3px rgba(0, 0, 0, 0.17), 0 3px 3px rgba(102, 145, 233, 0.09), 0 3px 9px rgba(0, 0, 0, 0.09), 0 3px 9px rgba(53, 103, 205, 0.09), 0 4px 16px rgba(0, 0, 0, 0.09), 0 4px 16px rgba(102, 145, 233, 0.33), 0 13px 21px rgba(0, 0, 0, 0.15), 0 13px 21px rgba(20, 80, 204, 0.27), 0 7px 9px rgba(142, 117, 222, 0.15);
+				border-radius: 20px
+				background: linear-gradient(90deg,#582c7e,#6379d0)
+				margin-left: 20px
+
+	#languages
+
+		li 
+			a
+				color: #959595 
+				font-family: "Titillium"
+				font-size: 14px
+				font-weight: 400
+
+
+	.header-block
+		height: 100%
+		display: flex
+		flex-direction: column 
+		justify-content: center 
+		align-items: center
+		position: relative
+
+		h1,h2 
+			font-family: "Titillium" !important
+			text-align: center
+			
+		h1 
+			font-weight: 700
+			font-size: 60px	
+
+			@media (max-width: 484px)
+				font-size: 40px
+		h2
+			font-weight: 400
+			font-size: 36px
+			#based
+				color: red
+		
+		#social-links
+
+			position: absolute
+			right: 30px
+			display: flex
+			flex-direction: column
+			height: 100px
+			font-size: 22px
+			cursor: pointer
+
+			@media (max-width: 438px)
+				right: 5px
+			@media (max-width: 374px)
+				flex-direction: row
+				top: 0
+				right: 10px
+				
+			
+
+		.header-block-actions
+			
+			margin-top: 75px
+
+			@media (max-width: 380px)
+				display: flex
+				justify-content: center
+				flex-wrap: wrap
+			
+
+			button
+				color: white
+				margin-bottom: 10px
+
+			.account-create 
+				background: linear-gradient(90deg, #646c93, #5f2e6a)
+				box-shadow: 0 3px 3px rgba(0, 0, 0, 0.17), 0 3px 3px rgba(102, 145, 233, 0.09), 0 3px 9px rgba(0, 0, 0, 0.09), 0 3px 9px rgba(53, 103, 205, 0.09), 0 4px 16px rgba(0, 0, 0, 0.09), 0 4px 16px rgba(102, 145, 233, 0.33), 0 13px 21px rgba(0, 0, 0, 0.15), 0 13px 21px rgba(20, 80, 204, 0.27), 0 7px 9px rgba(100, 115, 151, 0.15), 0 0 7px rgba(95, 47, 106, 0.25)
+				@media screen and ( max-width: 380px  )
+					width: 100%
+					
+			.apple 
+				margin: 0 24px 
+			
+			.accent-circle-btn
+				border-radius: 50%
+				padding: 0
+				width: 46px
+				height: 46px
+				background-color: #5f2e6a
+
+//MAIN 
+main 
+
+	// features 
+	
+	
+
+	#features
+
+		margin: 100px 0
+
+		.feautures-block-1
+			padding-left: 200px
+			border-right: 1px solid #dfdfdf
+			border-bottom: 1px solid #dfdfdf
+			position: relative
+
+			@media (max-width: 1670px)
+				padding-left: 50px !important
+			
+			@media (max-width: 1230px)
+				padding-left: 0px !important
+
+		.feautures-block-2
+			padding-right: 200px
+
+			@media (max-width: 1670px)
+				padding-right: 50px !important
+			
+			@media (max-width: 1230px)
+				padding-right: 0px !important
+
+			@media (max-width: 992px)
+				margin-top: 30px
+
+		.feature
+
+			position: relative
+			width: 379px
+			@media (max-width: 1096px)
+				width: 100%
+
+			&#feature-second:before 
+				content: ''
+				position: absolute
+				top: -54%
+				left: -30px
+				height: 200px
+				width: 1px
+				background: #DFDFDF
+				
+
+				@media (max-width: 1296px)
+					left: -10px
+				
+				@media (max-width: 1042px)
+					display: none
+			
+			&#feature-third:after
+				content: ''
+				position: absolute
+				top: 0
+				right: -500px
+				height: 1px 
+				width: 500px
+				background: #DFDFDF
+
+				@media (max-width: 992px)
+					display: none
+				
+
+			.feature-text
+
+				color: #959393
+				font-family: "Titillium"
+				font-size: 14px
+				font-weight: 400
+				line-height: 22px
+
+				
+			
+			.feauture-title 
+
+				color: #585858
+				font-family: "Titillium"
+				font-size: 30px
+				font-weight: 400
+				margin: 0 0
+			
+			.feature-sub_title
+				
+				color: #a8a6a6
+		
+		.physical-security
+
+			padding-right: 43px
+			margin-top: 130px
+			flex-direction: column
+
+			@media (max-width: 992px)
+				margin-top: 50px
+
+			.ph-title
+				color: #535353 !important
+				font-family: "Titillium"
+				font-size: 60px
+				font-weight: 400
+				text-align: right
+
+			.ph-text 
+				margin-top: 12px
+				padding-left: 100px
+				margin-bottom: 54px
+				text-align: right
+				color: #959393
+				font-family: "Titillium"
+				font-size: 24px
+				font-weight: 400
+				line-height: 22px
+
+				@media (max-width: 992px)
+					padding-left: 10px
+
+		.learn-security
+			width: 334px
+			height: 62px
+			border-radius: 31px
+			border: 1px solid #b9b9b9
+			background-color: #ffffff
+			position: absolute
+			right: -167px
+			bottom: -31px
+			outline: none
+
+			@media (max-width: 992px)
+				right: 0
+				width: 300px
+
+	//partners
+
+	#partners
+		div
+			flex-wrap: wrap
+
+	#quotes 
+
+		
+		overflow: visible
+		margin-top: 66px
+		position: relative
+		height: 100px
+
+		@media (max-width: 506px)
+			height: auto
+
+		
+		.blockquote
+
+			width: 525px
+			color: #101010
+			font-family: "Titillium"
+			font-size: 24px
+			font-weight: 400
+			z-index: 9999
+
+			p 
+				margin-bottom: 15px
+
+			cite 
+				color: #727272
+				font-size: 16px
+				letter-spacing: 0.16px
+				line-height: 32px
+
+		.quotes-pages
+			z-index: 9999
+			padding-right: 25px
+			flex-direction: column
+			justify-content: space-around
+			padding-top: 30px
+			padding-bottom: 30px
+			
+			.quote-page-circle
+				cursor: pointer
+				border-radius: 50%	
+				width: 11px
+				height: 11px
+				background-color: #b7b7b7
+
+				&.active
+					background-color: #101010
+					width: 13px
+					height: 13px	
+
+
+	#rest
+
+		
+		background: linear-gradient(to left bottom, #eeeeee,#fff) 
+		width: 100%
+		position: relative
+
+		
+	#everywhere
+
+		padding-top: 171px
+		
+		
+		.content
+			
+			width: 100%
+			position: relative
+			padding-bottom: 160px
+
+			&:after
+				content: ''
+				position: absolute
+				width: 80%
+				background: #dbdbdb
+				height: 1px
+				bottom: 0
+				right: 0
+			
+			
+			.learn-platforms
+				width: 430px
+				text-align: end
+				margin: 0 auto
+				overflow: visible
+				
+
+				@media (max-width: 506px)
+					width: 100%
+					padding: 0 10px
+
+				h2 
+					color: #535353
+					font-family: "Titillium"
+					margin-bottom: 20px
+					font-size: 36px
+					font-weight: 400
+					line-height: 22px
+
+				p 
+					color: #959393
+					font-family: "Titillium"
+					font-size: 16px
+					font-weight: 400
+					line-height: 22px
+					margin-bottom: 31px
+
+	#privacy
+		display: flex 
+		justify-content: center
+		padding: 68px 0
+
+		
+
+		h2 
+			color: #7c7c7c
+			font-family: "Titillium"
+			font-size: 29px
+			font-weight: 400
+
+		h3 
+			color: #535353
+			font-family: "Titillium"
+			font-size: 25px
+			letter-spacing: 0.36px
+			line-height: 30px
+
+			@media (max-width: 580px)
+				text-align: center
+		
+		.actions
+
+			margin-top: 35px
+
+			@media (max-width: 465px)
+				flex-direction: column
+				
+
+			.paid
+				box-shadow: 0 3px 3px rgba(0, 0, 0, 0.17), 0 3px 3px rgba(102, 145, 233, 0.09), 0 3px 9px rgba(0, 0, 0, 0.09), 0 3px 9px rgba(53, 103, 205, 0.09), 0 4px 16px rgba(0, 0, 0, 0.09), 0 4px 16px rgba(102, 145, 233, 0.33), 0 13px 21px rgba(0, 0, 0, 0.15), 0 13px 21px rgba(20, 80, 204, 0.27), 0 7px 9px rgba(100, 115, 151, 0.15), 0 0 7px rgba(95, 47, 106, 0.25)
+				border-radius: 28px
+				background: linear-gradient(90deg,#646c93,#5f2e69)
+				@media (max-width: 465px)
+					margin-bottom: 15px
+				
+
+			.donate
+				box-shadow: 0 3px 3px rgba(0, 0, 0, 0.17), 0 3px 3px rgba(26, 230, 218, 0.09), 0 3px 9px rgba(0, 0, 0, 0.09), 0 3px 9px rgba(26, 230, 218, 0.09), 0 4px 16px rgba(0, 0, 0, 0.09), 0 4px 16px rgba(26, 230, 218, 0.33), 0 13px 21px rgba(0, 0, 0, 0.15), 0 13px 21px rgba(26, 230, 218, 0.27), 0 7px 9px rgba(26, 230, 218, 0.15), 0 0 7px rgba(95, 47, 106, 0.25)
+				border-radius: 28px
+				background: linear-gradient(90deg,#35bce1,#5e7bea)
+
+
+	footer 
+		padding-left: 196px
+		margin-right: 402px
+		border-top: 1px #cbcbcb solid
+		overflow-y: hidden
+
+		@media (max-width: 1489px)
+			margin-right: 201px
+		@media (max-width: 1289px)
+			margin-right: 30px
+		@media (max-width: 1117px)
+			margin-right: 10px
+			padding-left: 10px
+		
+
+		#hypryd
+			border-right: 1px #cbcbcb solid
+			padding-top: 23px
+			padding-right: 23px
+
+			#sponsors
+				.sponsors-list
+					flex-wrap: wrap
+			
+			#footer-nav
+				padding-top: 174px
+
+				.footer-navigation
+					@media (max-width: 531px)
+						display: block !important
+
+				.emails
+					border-left: 1px #d7d7d7 solid
+					
+					li 
+						list-style: none
+						font-family: "Titillium"
+						font-weight: 400
+						letter-spacing: 0.14px
+
+						a 
+							font-family: "Titillium"
+							font-weight: 700
+							letter-spacing: 0.14px
+							color: #7a7a7a
+							
+
+					#footer-nav-2-block
+						display: block
+						margin-top: 40px
+
+				.links
+
+					.column 
+						margin-left: 80px
+						position: relative
+
+						&#first-column:after
+							content: '' 
+							position: absolute
+							bottom: -190px
+							right: -20px
+							height: 312px
+							width: 1px 
+							background: #e9e9e9
+
+
+					
+					
+					@media (max-width: 909px)
+						display: block !important
+
+					p 
+						font-family: "Titillium"
+						font-size: 18px
+						font-weight: 700
+						letter-spacing: 0.18px
+
+					ul
+						
+						li 
+							white-space: nowrap
+
+							a 
+								color: #959595
+								font-family: "Titillium"
+								font-weight: 400
+								letter-spacing: 0.14px  
+
+		#footer-bottom
+			padding-top: 85px
+			
+			ol 
+				background: transparent
+				margin-bottom: 19px
+				padding-bottom: 0
+
+				li 
+					a
+						color: #b2b2b2 !important
+
+			.copyright
+				color: #5c5c5c
+				font-family: "Titillium"
+				font-size: 15px
+				font-weight: 600
+				padding-left: 18px
+				margin-bottom: 31px
+			
+		
+#test
+	height: 208px
+	width: 100%
+	background: white
+	position: absolute
+	top: 0
+	left: 0
+	overflow-y: visible
+	
+	clip-path:  polygon(0 0, 100% 0, 0 100%)
+
+	@media screen and ( max-width: 658px  )
+		height: 100px
+	
+	@media screen and ( max-width: 456px  )
+		height: 70px
+		
+
+	
+				
+
+			
+			
+
+				
+
+				
+
+		
+			
+
+		
+
+
+	
+	
+
+
