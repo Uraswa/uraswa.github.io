@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        audio::-webkit-media-controls {
+            display: none;
+        } <
+    </style>
+</head>
+<body>
+    <button id="btn1" style="height: 50vh; width: 100%; background-color: #A4C2F4; font-size: 25px">Команда 1 Счёт: <span id="score1">123</span></button>
+    <button id="btn2" style="
+    height: 50vh; width: 100%;background-color: #EA9999; font-size: 25px">Команда 2 Счёт: <span id="score2">123</span></button>
+
+    <input value="1" id="score_per_sec" type="number" placeholder="Количество очков в секунду">
+    <input value="2" id="score_loosing_coef" type="number" placeholder="Коэффициент баланса">
+    <input value="120" id="score_renullTime" type="number" placeholder="Через какое время в секундах захват нужно прекращается и его нужно продлить">
+
+    <audio id="frac1audio" src="frac1.ogg" controls loop>
+        Your browser does not support the audio element.
+    </audio>
+
+    <audio id="frac2audio" src="frac2.ogg" controls loop>
+        Your browser does not support the audio element.
+    </audio>
+
+<script>
+    const btn1 = document.getElementById("btn1");
+    const btn2 = document.getElementById("btn2");
+
+    const score_per_sec_input = document.getElementById("score_per_sec");
+    const score_renullTime_input = document.getElementById("score_renullTime");
+    const score_loosing_coef = document.getElementById("score_loosing_coef");
+
+    const score1Text = document.getElementById("score1");
+    const score2Text = document.getElementById("score2");
+
+    const frac1audio = document.getElementById("frac1audio");
+    const frac2audio = document.getElementById("frac2audio");
+
+    let score1 = 0;
+    let score2 = 0;
+    let renewTime = 0;
+    let currentTime = 0;
+    let flagState = "none"; // side1, side2
+
+
+    function getPointsToAdd(currentSideScore, enemySideScore){
+
+        let score_per_sec = Number.parseInt(score_per_sec_input.value);
+        let coef = Number.parseFloat(score_loosing_coef.value);
+
+        if (Math.abs(currentSideScore - enemySideScore) < 75){
+            return score_per_sec;
+        }
+
+        let calculatedValue = score_per_sec * (coef * (currentSideScore != 0 ? enemySideScore / currentSideScore : 1) - 1);
+        if (calculatedValue < score_per_sec) return score_per_sec;
+        else return Math.round(calculatedValue) > 10 ? 10 : Math.round(calculatedValue);
+    }
+
+    btn1.addEventListener("click", (ev) => {
+        flagState = "side1";
+        renewTime = currentTime + Number.parseFloat(score_renullTime_input.value);
+        frac1audio.play();
+        frac2audio.pause();
+    });
+
+    btn2.addEventListener("click", (ev) => {
+        flagState = "side2";
+        renewTime = currentTime + Number.parseFloat(score_renullTime_input.value);
+        frac2audio.play();
+        frac1audio.pause();
+    });
+
+    //game loop
+    setInterval(() => {
+
+        if (flagState != "none"){
+
+            if (flagState == "side1"){
+                score1 += getPointsToAdd(score1, score2);
+            }
+            if (flagState == "side2"){
+                score2 += getPointsToAdd(score2, score1);
+            }
+        }
+
+        if (renewTime <= currentTime){
+            flagState = "none";
+            frac2audio.pause();
+            frac1audio.pause();
+        }
+
+        currentTime += 1;
+
+        score1 = score1 > 1000 ? 1000 : score1;
+        score2 = score2 > 1000 ? 1000 : score2;
+
+        score1Text.textContent = score1;
+        score2Text.textContent = score2;
+    }, 1000)
+
+
+</script>
+</body>
+</html>
