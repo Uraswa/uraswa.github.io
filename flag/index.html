@@ -14,16 +14,19 @@
 
         audio::-webkit-media-controls {
             display: none;
-        } <
+        }
     </style>
 </head>
 <body>
-    <button id="btn1" style="height: 50vh; width: 100%; background-color: #A4C2F4; font-size: 25px">Команда 1 Счёт: <span id="score1">123</span></button>
+    <button id="btn1" style="height: 50vh; width: 100%; background-color: #A4C2F4; font-size: 25px">Команда 1 Счёт: <span id="score1">0</span></button>
     <button id="btn2" style="
-    height: 50vh; width: 100%;background-color: #EA9999; font-size: 25px">Команда 2 Счёт: <span id="score2">123</span></button>
+    height: 50vh; width: 100%;background-color: #EA9999; font-size: 25px">Команда 2 Счёт: <span id="score2">0</span></button>
 
+    <p style="margin: 0">Количество очков в секунду</p>
     <input value="1" id="score_per_sec" type="number" placeholder="Количество очков в секунду">
+    <p style="margin: 0">Коэффициент баланс</p>
     <input value="2" id="score_loosing_coef" type="number" placeholder="Коэффициент баланса">
+    <p style="margin: 0">Через какое время в секундах захват нужно прекращается и его нужно продлить</p>
     <input value="120" id="score_renullTime" type="number" placeholder="Через какое время в секундах захват нужно прекращается и его нужно продлить">
 
     <audio id="frac1audio" src="frac1.ogg" controls loop>
@@ -70,6 +73,7 @@
     }
 
     btn1.addEventListener("click", (ev) => {
+        if (flagState === "side1") return;
         flagState = "side1";
         renewTime = currentTime + Number.parseFloat(score_renullTime_input.value);
         frac1audio.play();
@@ -77,6 +81,7 @@
     });
 
     btn2.addEventListener("click", (ev) => {
+        if (flagState === "side2") return;
         flagState = "side2";
         renewTime = currentTime + Number.parseFloat(score_renullTime_input.value);
         frac2audio.play();
