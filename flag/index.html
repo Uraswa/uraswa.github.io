@@ -29,6 +29,9 @@
     <p style="margin: 0">Через какое время в секундах захват нужно прекращается и его нужно продлить</p>
     <input value="120" id="score_renullTime" type="number" placeholder="Через какое время в секундах захват нужно прекращается и его нужно продлить">
 
+    <p style="margin: 0">Включить/выключить уменьшение количества очков, если флаг никто не удерживает</p>
+    <input value="0.5" id="score_remove" type="number" placeholder="Включить/выключить уменьшение количества очков, если флаг никто не удерживает">
+
     <audio id="frac1audio" src="frac1.ogg" controls loop>
         Your browser does not support the audio element.
     </audio>
@@ -44,6 +47,7 @@
     const score_per_sec_input = document.getElementById("score_per_sec");
     const score_renullTime_input = document.getElementById("score_renullTime");
     const score_loosing_coef = document.getElementById("score_loosing_coef");
+    const score_remove = document.getElementById("score_remove");
 
     const score1Text = document.getElementById("score1");
     const score2Text = document.getElementById("score2");
@@ -99,6 +103,12 @@
             if (flagState == "side2"){
                 score2 += getPointsToAdd(score2, score1);
             }
+        } else {
+            score1 -= Number.parseFloat(score_remove.value);
+            score2 -= Number.parseFloat(score_remove.value);
+
+            score1 = score1 < 0 ? 0 : score1;
+            score2 = score2 < 0 ? 0 : score2;
         }
 
         if (renewTime <= currentTime){
