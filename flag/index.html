@@ -18,9 +18,11 @@
     </style>
 </head>
 <body>
-    <button id="btn1" style="height: 50vh; width: 100%; background-color: #A4C2F4; font-size: 25px">Команда 1 Счёт: <span id="score1">0</span></button>
+    <button id="btn1" style="height: 33.33vh; width: 100%; background-color: #A4C2F4; font-size: 25px">Команда 1 Счёт: <span id="score1">0</span></button>
     <button id="btn2" style="
-    height: 50vh; width: 100%;background-color: #EA9999; font-size: 25px">Команда 2 Счёт: <span id="score2">0</span></button>
+    height: 33.33vh; width: 100%;background-color: #EA9999; font-size: 25px">Команда 2 Счёт: <span id="score2">0</span></button>
+    <button id="btn3" style="
+    height: 33.33vh; width: 100%;background-color: #5F7755; font-size: 25px">Команда 3 Счёт: <span id="score3">0</span></button>
 
     <p style="margin: 0">Количество очков в секунду</p>
     <input value="1" id="score_per_sec" type="number" placeholder="Количество очков в секунду">
@@ -40,9 +42,14 @@
         Your browser does not support the audio element.
     </audio>
 
+    <audio id="frac3audio" src="frac3.mp3" controls loop>
+        Your browser does not support the audio element.
+    </audio>
+
 <script>
     const btn1 = document.getElementById("btn1");
     const btn2 = document.getElementById("btn2");
+    const btn3 = document.getElementById("btn3");
 
     const score_per_sec_input = document.getElementById("score_per_sec");
     const score_renullTime_input = document.getElementById("score_renullTime");
@@ -51,12 +58,15 @@
 
     const score1Text = document.getElementById("score1");
     const score2Text = document.getElementById("score2");
+    const score3Text = document.getElementById("score3");
 
     const frac1audio = document.getElementById("frac1audio");
     const frac2audio = document.getElementById("frac2audio");
+    const frac3audio = document.getElementById("frac3audio");
 
     let score1 = 0;
     let score2 = 0;
+    let score3 = 0;
     let renewTime = 0;
     let currentTime = 0;
     let flagState = "none"; // side1, side2
@@ -82,6 +92,7 @@
         renewTime = currentTime + Number.parseFloat(score_renullTime_input.value);
         frac1audio.play();
         frac2audio.pause();
+        frac3audio.pause();
     });
 
     btn2.addEventListener("click", (ev) => {
@@ -90,6 +101,16 @@
         renewTime = currentTime + Number.parseFloat(score_renullTime_input.value);
         frac2audio.play();
         frac1audio.pause();
+        frac3audio.pause();
+    });
+
+     btn3.addEventListener("click", (ev) => {
+        if (flagState === "side3") return;
+        flagState = "side3";
+        renewTime = currentTime + Number.parseFloat(score_renullTime_input.value);
+        frac3audio.play();
+        frac1audio.pause();
+        frac2audio.pause();
     });
 
     //game loop
@@ -98,32 +119,42 @@
         if (flagState != "none"){
 
             if (flagState == "side1"){
-                score1 += getPointsToAdd(score1, score2);
+                score1 += getPointsToAdd(score1, Math.max(score2, score3));
             }
             if (flagState == "side2"){
-                score2 += getPointsToAdd(score2, score1);
+                score2 += getPointsToAdd(score2, Math.max(score1, score3));
             }
+
+            if (flagState == "side3"){
+                score3 += getPointsToAdd(score3, Math.max(score1, score2));
+            }
+
         } else {
             score1 -= Number.parseFloat(score_remove.value);
             score2 -= Number.parseFloat(score_remove.value);
+            score3 -= Number.parseFloat(score_remove.value);
 
             score1 = score1 < 0 ? 0 : score1;
             score2 = score2 < 0 ? 0 : score2;
+            score3 = score3 < 0 ? 0 : score3;
         }
 
         if (renewTime <= currentTime){
             flagState = "none";
             frac2audio.pause();
             frac1audio.pause();
+            frac3audio.pause();
         }
 
         currentTime += 1;
 
         score1 = score1 > 1000 ? 1000 : score1;
         score2 = score2 > 1000 ? 1000 : score2;
+        score3 = score3 > 1000 ? 1000 : score3;
 
         score1Text.textContent = score1;
         score2Text.textContent = score2;
+        score3Text.textContent = score3;
     }, 1000)
 
 
