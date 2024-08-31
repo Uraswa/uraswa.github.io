@@ -87,7 +87,13 @@
     }
 
     btn1.addEventListener("click", (ev) => {
-        if (flagState === "side1") return;
+       if (flagState === "side1") {
+            flagState = "none";
+            frac3audio.pause();
+            frac1audio.pause();
+            frac2audio.pause();
+            return;
+        }
         flagState = "side1";
         renewTime = currentTime + Number.parseFloat(score_renullTime_input.value);
         frac1audio.play();
@@ -96,7 +102,13 @@
     });
 
     btn2.addEventListener("click", (ev) => {
-        if (flagState === "side2") return;
+       if (flagState === "side2") {
+            flagState = "none";
+            frac3audio.pause();
+            frac1audio.pause();
+            frac2audio.pause();
+            return;
+        }
         flagState = "side2";
         renewTime = currentTime + Number.parseFloat(score_renullTime_input.value);
         frac2audio.play();
@@ -105,7 +117,13 @@
     });
 
      btn3.addEventListener("click", (ev) => {
-        if (flagState === "side3") return;
+        if (flagState === "side3") {
+            flagState = "none";
+            frac3audio.pause();
+            frac1audio.pause();
+            frac2audio.pause();
+            return;
+        }
         flagState = "side3";
         renewTime = currentTime + Number.parseFloat(score_renullTime_input.value);
         frac3audio.play();
