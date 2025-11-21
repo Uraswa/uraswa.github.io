@@ -1,0 +1,1 @@
+import{v as n}from"./vm--eZ70ppT.js";import{P as r,D as s,a3 as a,g as c}from"./index-BEjTALk-.js";function v(){let e;const i=c();function t(){e=void 0}return r(t),s(t),{removeTick:t,registerTick(o){e=o,a(()=>{e===o&&(n(i)===!1&&e(),e=void 0)})}}}export{v as u};
