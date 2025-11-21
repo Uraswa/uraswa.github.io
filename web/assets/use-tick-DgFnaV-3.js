@@ -1,1 +1,0 @@
-import{v as n}from"./vm-CHOWyN6_.js";import{P as r,D as s,a3 as a,g as c}from"./index-XG3ruBr1.js";function v(){let e;const i=c();function t(){e=void 0}return r(t),s(t),{removeTick:t,registerTick(o){e=o,a(()=>{e===o&&(n(i)===!1&&e(),e=void 0)})}}}export{v as u};
