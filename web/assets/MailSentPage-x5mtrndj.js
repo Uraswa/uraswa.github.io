@@ -1,1 +1,0 @@
-import{Q as t}from"./QPage-CJ3xkkYn.js";import{_ as a,k as o,l as r,m as s,u as n}from"./index-BEjTALk-.js";import"./render-aB4a5-JQ.js";const l={name:"MailSentPage"};function p(c,e,i,f,m,u){return r(),o(t,null,{default:s(()=>[...e[0]||(e[0]=[n("h1",null,"На вашу почту выслано письмо с подтверждением.",-1)])]),_:1})}const $=a(l,[["render",p]]);export{$ as default};
